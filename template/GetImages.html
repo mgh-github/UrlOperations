@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% load crispy_forms_tags %}
+{%load static%}
+{% block content %}
+
+  <form method="GET">
+    {% csrf_token %}
+
+    {{ form|crispy }}
+
+    <button type="submit" class="btn btn-success">Get Images</button>
+  </form>
+
+
+{% for image in images %}
+<img src={{image}}>
+{% endfor %}
+
+{% endblock %}>

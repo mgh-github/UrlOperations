@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import UrlForm, Search
+from .models import UrlForm, Search, Image
 
 
 class UserForm(ModelForm):
@@ -10,5 +10,10 @@ class UserForm(ModelForm):
 class SearchName(ModelForm):
     class Meta:
         model = Search
+        fields = '__all__'
+
+class imgdown(ModelForm):
+    class Meta:
+        model = Image
         fields = '__all__'
 

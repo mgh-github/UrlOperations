@@ -12,10 +12,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
+import psycopg2
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# DATABASE_URL = os.environ['DATABASE_URL']
+
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -24,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = '2xrtan8o7cwh5wcj*4yl-k86%%9kqymufodre91_0@s9ifs0)*'
 SECRET_KEY = 'secretkey'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','https://urloperation.herokuapp.com/']
 
@@ -88,8 +92,9 @@ DATABASES = {
         'HOST':'localhost'
     }
 }
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
@@ -136,3 +141,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+# Media path
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
+MEDIA_URL = '/Media/'
