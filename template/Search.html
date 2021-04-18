@@ -5,6 +5,11 @@
 {% block content %}
 
   <form method="GET">
+    <a href="{% url 'Form' %}">URL Form</a>
+    <a href="{% url 'Search' %}">Search</a>
+    <a href="{% url 'Getimage' %}">Getimage</a>
+    <h1 class="mt-2">Search Form</h1>
+    <hr class="mt-0 mb-4">
     {% csrf_token %}
     {{ form|crispy }}
 

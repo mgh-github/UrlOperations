@@ -9,9 +9,11 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-8">
-          <h1 class="mt-2">User Form</h1>
-          <hr class="mt-0 mb-4">
           {% block content %}
+          <a href="{% url 'Search' %}">search</a>
+          <a href="{% url 'Getimage' %}">Getimage</a>
+
+
           {% endblock %}
         </div>
       </div>

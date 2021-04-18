@@ -3,6 +3,11 @@
 {% load crispy_forms_tags %}
 {%load static%}
 {% block content %}
+  <a href="{% url 'Form' %}">URL Form</a>
+  <a href="{% url 'Search' %}">Search</a>
+  <a href="{% url 'Getimage' %}">Getimage</a>
+  <h1 class="mt-2">Get Image Form</h1>
+  <hr class="mt-0 mb-4">
 
   <form method="GET">
     {% csrf_token %}

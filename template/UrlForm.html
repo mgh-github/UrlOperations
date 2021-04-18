@@ -2,9 +2,14 @@
 
 {% load crispy_forms_tags %}
 
-{% block content %}
 
+{% block content %}
+   <a href="{% url 'Search' %}">search</a>
+   <a href="{% url 'Getimage' %}">Getimage</a>
+   <h1 class="mt-2">User Form</h1>
+   <hr class="mt-0 mb-4">
   <form method="post">
+
     {% csrf_token %}
     {{ form|crispy }}
     <button type="submit" class="btn btn-success">Submit</button>
